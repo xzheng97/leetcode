@@ -20,7 +20,7 @@ layout: home
   {% for post in site.posts %}
     <tr>
         <td> {{ post.number }}</td>
-        <td> <a href="/leetcode/{{ post.url }}">{{ post.title }} </a></td>
+        <td> <a href="{{ post.url }}">{{ post.title }} </a></td>
         <td> {{ post.level }}</td>
         <td> {{ post.topic }}</td>
         <td> {{ post.workDate }}</td>
