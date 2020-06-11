@@ -5,7 +5,7 @@ number: 337
 level: "Medium"
 topic: "Tree, DFS"
 workDate: "06/10/20"
-permalink: /:title
+permalink: /leetcode/:title
 ---
 <a  style="color:#ffe57c;float:top" href="/index.html">Home</a>
 <h2>House Robber III</h2>
