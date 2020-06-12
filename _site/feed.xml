@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.0">Jekyll</generator><link href="http://localhost:4000/leetcode/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/leetcode/" rel="alternate" type="text/html" /><updated>2020-06-11T23:57:40-05:00</updated><id>http://localhost:4000/leetcode/feed.xml</id><title type="html">Your awesome title</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">House Robber III</title><link href="http://localhost:4000/leetcode/House-Robber-III" rel="alternate" type="text/html" title="House Robber III" /><published>2020-06-10T00:00:00-05:00</published><updated>2020-06-10T00:00:00-05:00</updated><id>http://localhost:4000/leetcode/House-Robber-III</id><content type="html" xml:base="http://localhost:4000/leetcode/House-Robber-III">&lt;p&gt;&lt;a style=&quot;color:#ffe57c;float:top&quot; href=&quot;/leetcode/index.html&quot;&gt;Home&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;House Robber III&lt;/h2&gt;
+
+&lt;h3 style=&quot;color:#ffe57c;&quot;&gt;&lt;a href=&quot;https://leetcode.com/problems/house-robber-iii/&quot;&gt;Question&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;The thief has found himself a new place for his thievery again. There is only one entrance to this area, called the &quot;root.&quot; Besides the root, each house has one and only one parent house. After a tour, the smart thief realized that &quot;all houses in this place forms a binary tree&quot;. It will automatically contact the police if two directly-linked houses were broken into on the same night.&lt;/p&gt;
+
+&lt;p&gt;Determine the maximum amount of money the thief can rob tonight without alerting the police.&lt;/p&gt;
+
+&lt;h3&gt;Example 1:&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&quot;plaintext&quot;&gt;Input: [3,2,3,null,3,null,1]
+
+     3
+    / \
+   2   3
+    \   \ 
+     3   1
+
+Output: 7 
+Explanation: Maximum amount of money the thief can rob = 3 + 3 + 1 = 7.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;Example 2:&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&quot;plaintext&quot;&gt;Input: [3,4,5,1,3,null,1]
+
+     3
+    / \
+   4   5
+  / \   \ 
+ 1   3   1
+
+Output: 9
+Explanation: Maximum amount of money the thief can rob = 4 + 5 = 9.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;Solution:&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&quot;java&quot;&gt;class Solution {
+    private HashMap&amp;lt;TreeNode, Integer&amp;gt; skip;
+    private HashMap&amp;lt;TreeNode, Integer&amp;gt; take;
+    public int rob(TreeNode root) {
+        if(root == null) return 0;
+        skip = new HashMap&amp;lt;&amp;gt;();
+        take = new HashMap&amp;lt;&amp;gt;();
+        
+        help(root);
+        
+        return Math.max(skip.get(root), take.get(root));
+    }
+    
+    private void help(TreeNode root) {
+        if(root == null) return;
+        help(root.left);
+        help(root.right);
+        
+        int curSkip = 0, curTake = 0;
+        if(root.left != null) {
+            curSkip = Math.max(skip.get(root.left), take.get(root.left));
+            curTake = skip.get(root.left);
+        }
+        
+        if(root.right != null) {
+            curSkip += Math.max(skip.get(root.right), take.get(root.right));
+            curTake += skip.get(root.right);
+        }
+        
+        skip.put(root, curSkip);
+        take.put(root, curTake + root.val);
+    }
+}&lt;/code&gt;&lt;/pre&gt;</content><author><name></name></author><summary type="html">Home House Robber III</summary></entry></feed>
