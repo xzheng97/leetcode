@@ -7,7 +7,7 @@ topic: "Tree, DFS"
 workDate: "06/10/20"
 permalink: /:title
 ---
-<a  style="color:#ffe57c;float:top" href="/index.html">Home</a>
+<a  style="color:#ffe57c;float:top" href="{{site.baseurl}}/index.html">Home</a>
 <h2>House Robber III</h2>
 
 <h3 style="color:#ffe57c;"><a href="https://leetcode.com/problems/house-robber-iii/">Question</a></h3>
