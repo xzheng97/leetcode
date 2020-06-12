@@ -1,4 +1,42 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.0">Jekyll</generator><link href="http://localhost:4000/leetcode/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/leetcode/" rel="alternate" type="text/html" /><updated>2020-06-12T00:01:03-05:00</updated><id>http://localhost:4000/leetcode/feed.xml</id><title type="html">Your awesome title</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">House Robber III</title><link href="http://localhost:4000/leetcode/House-Robber-III" rel="alternate" type="text/html" title="House Robber III" /><published>2020-06-10T00:00:00-05:00</published><updated>2020-06-10T00:00:00-05:00</updated><id>http://localhost:4000/leetcode/House-Robber-III</id><content type="html" xml:base="http://localhost:4000/leetcode/House-Robber-III">&lt;p&gt;&lt;a style=&quot;color:#ffe57c;float:top&quot; href=&quot;/leetcode/index.html&quot;&gt;Home&lt;/a&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.0">Jekyll</generator><link href="http://localhost:4000/leetcode/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/leetcode/" rel="alternate" type="text/html" /><updated>2020-06-12T04:47:53-05:00</updated><id>http://localhost:4000/leetcode/feed.xml</id><title type="html">Your awesome title</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">Container With Most Water</title><link href="http://localhost:4000/leetcode/Container-With-Most-Water" rel="alternate" type="text/html" title="Container With Most Water" /><published>2020-06-11T00:00:00-05:00</published><updated>2020-06-11T00:00:00-05:00</updated><id>http://localhost:4000/leetcode/Container-With-Most-Water</id><content type="html" xml:base="http://localhost:4000/leetcode/Container-With-Most-Water">&lt;p&gt;&lt;a style=&quot;color:#ffe57c;float:top&quot; href=&quot;/leetcode/index.html&quot;&gt;Home&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;Container With Most Water&lt;/h2&gt;
+
+&lt;h3 style=&quot;color:#ffe57c;&quot;&gt;&lt;a href=&quot;https://leetcode.com/problems/container-with-most-water/&quot;&gt;Question&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;TGiven n non-negative integers a1, a2, ..., an , where each represents a point at coordinate (i, ai). n vertical lines are drawn such that the two endpoints of line i is at (i, ai) and (i, 0). Find two lines, which together with x-axis forms a container, such that the container contains the most water.&lt;/p&gt;
+
+&lt;p&gt;Note: You may not slant the container and n is at least 2.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/leetcode/images/question_11.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;h3&gt;Example:&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&quot;plaintext&quot;&gt;Input: [1,8,6,2,5,4,8,3,7]
+Output: 49
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;Solution:&lt;/h3&gt;
+&lt;p style=&quot;color: #ffc0cb&quot;&gt;Note: one at the start and one at the end. One moves closer if it has smaller height as moving the other one will not expand the area since the height is determined by the lower one.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;java&quot;&gt; class Solution {
+    public int maxArea(int[] height) {
+        int max = 0;
+        int area = 0;
+        int pt1 = 0;
+        int pt2 = height.length-1;
+        while (pt1 &amp;lt; pt2) {
+            if(height[pt1]&amp;lt; height[pt2]){
+                area = height[pt1] * (pt2-pt1);
+                pt1++;
+            }
+            else {
+                area = height[pt2] * (pt2-pt1);
+                
+                pt2--;
+            }   
+            max = max &amp;gt; area? max: area;
+        }
+        return max;
+    }
+}&lt;/code&gt;&lt;/pre&gt;</content><author><name></name></author><summary type="html">Home Container With Most Water</summary></entry><entry><title type="html">House Robber III</title><link href="http://localhost:4000/leetcode/House-Robber-III" rel="alternate" type="text/html" title="House Robber III" /><published>2020-06-10T00:00:00-05:00</published><updated>2020-06-10T00:00:00-05:00</updated><id>http://localhost:4000/leetcode/House-Robber-III</id><content type="html" xml:base="http://localhost:4000/leetcode/House-Robber-III">&lt;p&gt;&lt;a style=&quot;color:#ffe57c;float:top&quot; href=&quot;/leetcode/index.html&quot;&gt;Home&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;House Robber III&lt;/h2&gt;
 
 &lt;h3 style=&quot;color:#ffe57c;&quot;&gt;&lt;a href=&quot;https://leetcode.com/problems/house-robber-iii/&quot;&gt;Question&lt;/a&gt;&lt;/h3&gt;
