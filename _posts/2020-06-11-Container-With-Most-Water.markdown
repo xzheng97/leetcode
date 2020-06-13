@@ -17,7 +17,7 @@ permalink: /:title
 
 <p>Note: You may not slant the container and n is at least 2.</p>
 
-<img src="{{site.baseurl}}/images/question_11.jpg">
+<img src="{{site.baseurl}}/images/question_11.jpg" style='width:100%;'>
 
 <h3>Example:</h3>
 <pre><code class="plaintext">Input: [1,8,6,2,5,4,8,3,7]
