@@ -30,7 +30,8 @@ A solution set is:
 
 <h3>Solution:</h3>
 <p style="color: #ffc0cb">Note: This approach reduces the question to two-sum II after ordering the array. Avoid duplicate by skipping elements that are the same as their previous ones. And use two pointers to traverse</p>
-<pre><code class="java">class Solution {
+```java
+class Solution {
     public List<List<Integer>> threeSum(int[] nums) {
         Arrays.sort(nums);
         List<List<Integer>> res = new ArrayList<>();
@@ -51,11 +52,12 @@ A solution set is:
                 res.add(Arrays.asList(nums[i], nums[lo++], nums[hi--]));
         }
     }
-}</code></pre>
-
+}
+```
 
 <p style="color: #ffc0cb">Note: This approach is very alike to 2sum, but it uses set and specific arrangement for triplets to avoid duplicates.</p>
-<pre><code class="java">class Solution {
+```java
+class Solution {
     public List<List<Integer>> threeSum(int[] nums) {
         List<List<Integer>> res = new ArrayList<>();
         Set<Pair> found = new HashSet<>();
@@ -74,4 +76,5 @@ A solution set is:
         }
         return res;
     }
-}</code></pre>
+}
+```
